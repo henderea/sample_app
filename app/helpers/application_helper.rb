@@ -8,4 +8,8 @@ module ApplicationHelper
       page_title + ' | ' + base_title
     end
   end
+
+  def form_layout(&block)
+    render({layout: 'shared/form_layout'}, &block)
+  end
 end

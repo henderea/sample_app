@@ -1,0 +1,7 @@
+<%
+  page_title = yield(:page_title)
+  page_title = yield(:title) if page_title.to_sym == :title
+%>
+<% if page_title && page_title != '' %>
+    <h1><%= page_title %></h1>
+<% end %>
