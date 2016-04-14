@@ -43,6 +43,7 @@ class PasswordResetsController < ApplicationController
 
   def get_user
     @user = User.for_email(params[:email])
+    puts @user.reset_digest
   end
 
   # Confirms a valid user.
