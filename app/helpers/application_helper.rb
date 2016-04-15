@@ -10,6 +10,14 @@ module ApplicationHelper
   end
 
   def form_layout(&block)
-    render({layout: 'shared/form_layout'}, &block)
+    render({ layout: 'shared/form_layout' }, &block)
+  end
+
+  def show_errors(f)
+    render 'shared/error_messages', object: f.object
+  end
+
+  def show_microposts(microposts)
+    render 'shared/feed', microposts: microposts
   end
 end

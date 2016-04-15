@@ -2,7 +2,7 @@
 <% provide(:page_title, :title) %>
 <%= form_layout do %>
     <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages' %>
+        <%= show_errors f %>
 
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control' %>
