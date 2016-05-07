@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
+  default_scope -> { order(id: :asc) }
   before_save :downcase_email
   before_create :create_activation_digest
   validates :name, presence: true, length: { maximum: 50 }
